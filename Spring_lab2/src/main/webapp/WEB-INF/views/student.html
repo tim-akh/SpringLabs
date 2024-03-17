@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Student</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-info">Student</h1>
+    <form action="#" th:action="@{/student/add}" method="post" th:object="${student}">
+        <label for="student-surname">Surname: </label>
+        <input id="student-surname" class="form-control" th:field="*{surname}" />
+        <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="text-danger"></span>
+        <br />
+        <label for="student-firstname">Firstname: </label>
+        <input id="student-firstname" class="form-control" th:field="*{firstname}" />
+        <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" class="text-danger"></span>
+        <br />
+        <label for="student-patronymic">Patronymic: </label>
+        <input id="student-patronymic" class="form-control" th:field="*{patronymic}" />
+        <span th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}" class="text-danger"></span>
+        <br />
+        <label for="student-birthDate">Birth date: </label>
+        <input id="student-birthDate" class="form-control" th:field="*{birthDate}" />
+        <span th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}" class="text-danger"></span>
+        <br />
+        <label for="student-gender">Gender: </label>
+        <input id="student-gender" class="form-control" th:field="*{gender}" />
+        <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="text-danger"></span>
+        <br />
+        <label for="student-birthCity">Birth city: </label>
+        <select th:field="*{birthCity}" id="student-birthCity" class="form-control selectpicker">
+            <option th:each="birthCity:${birthCities}" th:value="${birthCity}" th:text="${birthCity}"></option>
+        </select>
+        <br />
+        <label for="student-faculty">Faculty: </label>
+        <select th:field="*{faculty}" id="student-faculty" class="form-control selectpicker">
+            <option th:each="faculty : ${T(ru.isu.model.Faculties).values()}" th:value="${faculty}"
+                    th:text="${faculty}"></option>
+        </select>
+        <br />
+        <label for="student-group">Group: </label>
+        <input id="student-group" class="form-control" th:field="*{group}" />
+        <span th:if="${#fields.hasErrors('group')}" th:errors="*{group}" class="text-danger"></span>
+        <br />
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+</body>
+</html>

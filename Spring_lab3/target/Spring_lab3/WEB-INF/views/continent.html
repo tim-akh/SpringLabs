@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Continent</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h1 class="text-info">Continents</h1>
+    <table class="table table-striped">
+        <tr th:each="continent : ${continents}">
+            <td><a th:href="@{/world/countries(continent=${continent})}" th:text="${continent}"></a></td>
+        </tr>
+    </table>
+</body>
+</html>

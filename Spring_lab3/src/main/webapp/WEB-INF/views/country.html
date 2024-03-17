@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title th:text="#{Title}"></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+      <a th:href="@{country(code=${country.code},lang=en)}">English</a>
+      <a th:href="@{country(code=${country.code},lang=ru)}">Russian</a>
+      <h1 class="text-info" th:text="#{Header}"></h1>
+      <span th:text="#{Code}+': '"></span><span th:text="*{country.code}"></span><br />
+      <span th:text="#{Name}+': '"></span><span th:text="*{country.name}"></span><br />
+      <span th:text="#{Continent}+': '"></span><span th:text="*{country.continent}"></span><br />
+      <span th:text="#{Population}+': '"></span><span th:text="*{country.population}"></span><br />
+      <span th:text="#{SurfaceArea}+': '"></span><span th:text="*{country.surfaceArea}"></span><br />
+    </div>
+</body>
+</html>

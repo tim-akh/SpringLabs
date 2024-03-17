@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Result</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-info">Result</h1>
+  <span>Surname: </span><span th:text="*{student.surname}"></span><br />
+  <span>Firstname: </span><span th:text="*{student.firstname}"></span><br />
+  <span>Patronymic: </span><span th:text="*{student.patronymic}"></span><br />
+  <span>Birth date: </span><span th:text="*{student.birthDate}"></span><br />
+  <span>Gender: </span><span th:text="*{student.gender}"></span><br />
+  <span>Birth city: </span><span th:text="*{student.birthCity}"></span><br />
+  <span>Faculty: </span><span th:text="*{student.faculty}"></span><br />
+  <span>Group: </span><span th:text="*{student.group}"></span><br />
+  <span>Current student age: </span><span th:text="*{student.age}"></span>
+</div>
+</body>
+</html>
